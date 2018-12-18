@@ -11,7 +11,8 @@
 using System;
 using System.Reflection;
 
-[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("CorrespondentPortal.WebApi", "C:\\Users\\athigpen\\Source\\Repos\\Forge2018_Unicorns\\CorrespondentPortal\\Corresponde" +
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("CorrespondentPortal.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" +
+    "", "C:\\Users\\athigpen\\Source\\Repos\\Forge2018_Unicorns\\CorrespondentPortal\\Corresponde" +
     "ntPortal.WebApi", "CorrespondentPortal.WebApi.csproj", "0")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("CorrespondentPortal.WebApi.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
