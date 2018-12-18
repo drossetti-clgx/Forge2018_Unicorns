@@ -65,7 +65,7 @@ namespace Forge2018Connectivity
         /// <param name="orderCalculationsDataDtoJsonString"></param>
         /// <param name="inputUserMismo"></param>
         /// <returns></returns>
-        public static async Task<string> ExtractInformationFromAppraisalMISMO(string orderCalculationsDataDtoJsonString, string inputUserMismo)
+        public static string ExtractInformationFromAppraisalMISMO(string orderCalculationsDataDtoJsonString, string inputUserMismo)
         {
             var orderCalculationsDataObject = DeserializeJson<OrderCalculationDataDto>(orderCalculationsDataDtoJsonString);
             var userMismoXmlObject = DeserializeXml<UserMismoXMLMappingDto>(inputUserMismo);
@@ -94,7 +94,7 @@ namespace Forge2018Connectivity
         /// <param name="orderCalculationsDataDtoJsonString"></param>
         /// <param name="inputUserMismo"></param>
         /// <returns></returns>
-        public static async Task<string> ExtractInformationFromGAARResponse(string orderCalculationsDataDtoJsonString, string responseGAARRoverString)
+        public static string ExtractInformationFromGAARResponse(string orderCalculationsDataDtoJsonString, string responseGAARRoverString)
         {
             var orderCalculationsDataObject = DeserializeJson<OrderCalculationDataDto>(orderCalculationsDataDtoJsonString);
             var roverResponseXMLObject = DeserializeXml<GAARRoverResponseDto>(responseGAARRoverString);

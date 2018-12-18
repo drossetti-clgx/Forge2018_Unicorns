@@ -37,7 +37,7 @@ namespace UnitTestProject
         public async Task ExtractInformationFromMISMOTest()
         {
             var fileText = File.ReadAllText("MismoXML.xml");
-            var jsonString = await HelperMethods.ExtractInformationFromAppraisalMISMO(HelperMethods.SerializeJson(new OrderCalculationDataDto()), fileText);
+            var jsonString = HelperMethods.ExtractInformationFromAppraisalMISMO(HelperMethods.SerializeJson(new OrderCalculationDataDto()), fileText);
             Trace.Write(jsonString);
         }
 
@@ -46,7 +46,7 @@ namespace UnitTestProject
         {
             var requestString = GenerateGAARPostRequestFactory.CreateGAARPostRequestObject(File.ReadAllText("MismoXML.xml"));
             var response = await HelperMethods.PostRequestToGAARRover(requestString);
-            var jsonString = await HelperMethods.ExtractInformationFromGAARResponse(HelperMethods.SerializeJson(new OrderCalculationDataDto()), response);
+            var jsonString = HelperMethods.ExtractInformationFromGAARResponse(HelperMethods.SerializeJson(new OrderCalculationDataDto()), response);
             Trace.Write(jsonString);
         }
     }
