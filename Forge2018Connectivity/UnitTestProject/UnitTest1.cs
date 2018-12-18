@@ -32,6 +32,23 @@ namespace UnitTestProject
             var response = await HelperMethods.PostRequestToGAARRover(originalRequestString);
             Trace.Write(response);
         }
+
+        [TestMethod, DeploymentItem(@"MismoXML.xml")]
+        public async Task ExtractInformationFromMISMOTest()
+        {
+            var fileText = File.ReadAllText("MismoXML.xml");
+            var jsonString = await HelperMethods.ExtractInformationFromAppraisalMISMO(HelperMethods.SerializeJson(new OrderCalculationDataDto()), fileText);
+            Trace.Write(jsonString);
+        }
+
+        [TestMethod, DeploymentItem(@"MismoXML.xml")]
+        public async Task ExtractInformationFromGAARResponseTest()
+        {
+            var requestString = GenerateGAARPostRequestFactory.CreateGAARPostRequestObject(File.ReadAllText("MismoXML.xml"));
+            var response = await HelperMethods.PostRequestToGAARRover(requestString);
+            var jsonString = await HelperMethods.ExtractInformationFromGAARResponse(HelperMethods.SerializeJson(new OrderCalculationDataDto()), response);
+            Trace.Write(jsonString);
+        }
     }
 }
 
