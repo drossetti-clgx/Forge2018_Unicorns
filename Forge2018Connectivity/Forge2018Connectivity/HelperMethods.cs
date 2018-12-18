@@ -36,7 +36,7 @@ namespace Forge2018Connectivity
         {
             var client = new RestClient("https://devdata.fncinc.com/cdnarover/dna_runService.ashx");
             var request = new RestRequest(Method.POST);
-            //request.AddHeader("Content-Type", "text/plain");
+            request.AddHeader("Content-Type", "text/plain");
 
             if (xmlContent != null) request.AddParameter("plain/text", xmlContent, ParameterType.RequestBody);
 
