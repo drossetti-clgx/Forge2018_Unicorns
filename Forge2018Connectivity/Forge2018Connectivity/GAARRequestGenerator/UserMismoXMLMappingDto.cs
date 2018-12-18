@@ -5521,7 +5521,7 @@ namespace Forge2018Connectivity.GAARRequestGenerator
 
         private string aPPRAISALMADEField;
 
-        private uint iNDICATEDVALUESALESField;
+        private string iNDICATEDVALUESALESField;
 
         private FORMINFORECONCILINDICATEDVALUEINCOME iNDICATEDVALUEINCOMEField;
 
@@ -5558,7 +5558,7 @@ namespace Forge2018Connectivity.GAARRequestGenerator
         }
 
         /// <remarks/>
-        public uint INDICATEDVALUESALES
+        public string INDICATEDVALUESALES
         {
             get
             {

@@ -77,7 +77,7 @@ namespace Forge2018Connectivity
             orderCalculationsDataObject.Zip = userMismoXmlObject.SUBJECT.ADDR.ZIP;
 
             //ESTMARKETVALUE
-            orderCalculationsDataObject.AppraisedValue = userMismoXmlObject.RECONCIL.INDICATEDVALUESALES;
+            orderCalculationsDataObject.EstimatedValue = userMismoXmlObject.RECONCIL.INDICATEDVALUESALES;
 
             //FORMINFO
             orderCalculationsDataObject.FormType = userMismoXmlObject.FORMNUM;

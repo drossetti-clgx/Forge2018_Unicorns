@@ -11,7 +11,6 @@ namespace Forge2018Connectivity
         public string BorrowerCreditScore { get; set; }
         public string CUScore { get; set; }
         public string LCAScore { get; set; }
-        public decimal LoanToValue { get; set; }
         public string StreetAddress { get; set; }
         public string City { get; set; }
         public string State { get; set; }
@@ -24,6 +23,9 @@ namespace Forge2018Connectivity
         public string FormType { get; set; }
         public string GAARScore { get; set; }
         public string LoanNumber { get; set; }
+        public string LoanAmount { get; set; }
         public string BorrowerName { get; set; }
+        public string LTV { get; set; }
+        public string EstimatedValue { get; set; }
     }
 }

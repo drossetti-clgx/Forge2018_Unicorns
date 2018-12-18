@@ -5596,11 +5596,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\drossetti\\source\\repos\\Forge2018_Unicorns\\Forge2018Connectivity\\UnitTestProject\\UnitTestProject.csproj",
+      "projectUniqueName": "C:\\Users\\drossetti\\Source\\Repos\\Forge2018_Unicorns\\Forge2018Connectivity\\UnitTestProject\\UnitTestProject.csproj",
       "projectName": "UnitTestProject",
-      "projectPath": "C:\\Users\\drossetti\\source\\repos\\Forge2018_Unicorns\\Forge2018Connectivity\\UnitTestProject\\UnitTestProject.csproj",
+      "projectPath": "C:\\Users\\drossetti\\Source\\Repos\\Forge2018_Unicorns\\Forge2018Connectivity\\UnitTestProject\\UnitTestProject.csproj",
       "packagesPath": "C:\\Users\\drossetti\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\drossetti\\source\\repos\\Forge2018_Unicorns\\Forge2018Connectivity\\UnitTestProject\\obj\\",
+      "outputPath": "C:\\Users\\drossetti\\Source\\Repos\\Forge2018_Unicorns\\Forge2018Connectivity\\UnitTestProject\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -5620,8 +5620,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\drossetti\\source\\repos\\Forge2018_Unicorns\\Forge2018Connectivity\\Forge2018Connectivity\\Forge2018Connectivity.csproj": {
-              "projectPath": "C:\\Users\\drossetti\\source\\repos\\Forge2018_Unicorns\\Forge2018Connectivity\\Forge2018Connectivity\\Forge2018Connectivity.csproj"
+            "C:\\Users\\drossetti\\Source\\Repos\\Forge2018_Unicorns\\Forge2018Connectivity\\Forge2018Connectivity\\Forge2018Connectivity.csproj": {
+              "projectPath": "C:\\Users\\drossetti\\Source\\Repos\\Forge2018_Unicorns\\Forge2018Connectivity\\Forge2018Connectivity\\Forge2018Connectivity.csproj"
             }
           }
         }
