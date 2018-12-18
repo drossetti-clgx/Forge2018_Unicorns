@@ -7,9 +7,9 @@ namespace Forge2018Connectivity.GAARRequestFunctionality
     // NOTE: Generated code may require at least .NET Framework 4.5 or .NET Core/Standard 2.0.
     /// <remarks/>
     [Serializable()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    [System.Xml.Serialization.XmlRootAttribute(ElementName = "FncDataAnalytics", IsNullable = false)]
+    [System.ComponentModel.DesignerCategory("code")]
+    [System.Xml.Serialization.XmlType(AnonymousType = true)]
+    [System.Xml.Serialization.XmlRoot(ElementName = "FncDataAnalytics", IsNullable = false)]
     public partial class BaseGAARRequestOuterXMLDto
     {
 

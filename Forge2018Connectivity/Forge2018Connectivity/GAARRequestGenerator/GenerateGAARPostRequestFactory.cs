@@ -6,9 +6,9 @@ namespace Forge2018Connectivity.GAARRequestFunctionality
 {
     public class GenerateGAARPostRequestFactory
     {
+        private StringBuilder FinalGeneratedRequestString = new StringBuilder();
         private string UserMISMOString { get; set; }
         private BaseGAARRequestOuterXMLDto FNCRequestXML { get; set; }
-        private string FinalGeneratedRequestString { get; set; }
 
         public GenerateGAARPostRequestFactory(string userMismo)
         {
@@ -19,10 +19,18 @@ namespace Forge2018Connectivity.GAARRequestFunctionality
         {
             var factory = new GenerateGAARPostRequestFactory(userMismo);
             factory.FNCRequestXML = factory.GetFNCRequestXML();
-            //do some more stuff ******************************************
-
-            return HelperMethods.SerializeXml(factory.FNCRequestXML);
+            factory.MergeXMLStrings();
+            return factory.FinalGeneratedRequestString.ToString();
         }
+
+        private void MergeXMLStrings()
+        {
+            FinalGeneratedRequestString.Append(HelperMethods.SerializeXml(FNCRequestXML));
+            var startingIndex = FinalGeneratedRequestString.ToString().IndexOf("<FILTERS");
+            FinalGeneratedRequestString.Insert(startingIndex, UserMISMOString);
+        }
+
+        #region Default Data Generation Methods
 
         private BaseGAARRequestOuterXMLDto GetFNCRequestXML()
         {
@@ -90,5 +98,7 @@ namespace Forge2018Connectivity.GAARRequestFunctionality
                 VALUE = 5.00M
             };
         }
+
+        #endregion
     }
 }
