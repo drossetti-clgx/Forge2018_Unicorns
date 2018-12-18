@@ -10,7 +10,7 @@ namespace UnitTestProject
     [TestClass]
     public class UnitTest1
     {
-        [TestMethod]
+        [TestMethod, DeploymentItem(@"MismoXML.xml")]
         public void GenerateXMLTest()
         {
             var requestString = GenerateGAARPostRequestFactory.CreateGAARPostRequestObject(File.ReadAllText("MismoXML.xml"));
