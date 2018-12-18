@@ -1,0 +1,116 @@
+@using CorrespondentPortal.WebApi.Infrastructure.Configuration
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/clui/dist/css/corelogic-ui.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/lib/datatables/datatables.min.css" />
+    <title>CorrespondentPortal</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md cl-main-nav navbar-light">
+        <a class="navbar-brand" href="~/">
+            <span class="navbar-logo"></span>
+            <span class="text-uppercase">CorrespondentPortal</span>
+        </a>
+        <div class="navbar-links navbar-toggler" id="navbarMobileToggler">
+            <nav class="nav">
+                <a aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle Navigation"
+                   class="nav-item nav-link collapsed menu-toggle" data-toggle="collapse" href="#navbarSupportedContent">
+                    <span aria-hidden="true" class="fa fa-bars"><span class="sr-only">Toggle Navigation</span></span>
+                </a>
+            </nav>
+        </div>
+        <div class="navbar-collapse collapse" id="navbarSupportedContent">
+            <div class="navbar-links ml-auto">
+                <nav class="nav">
+                    <div class="nav-item">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <div class="d-block d-md-none">
+                                <a href="@Url.Action("SignOut", "Account")" class="nav-link">
+                                    <span class="fa fa-fw fa-user"><span class="sr-only">Sign Out @User.Identity.Name</span></span>
+                                    <span class="text-uppercase">Sign Out @User.Identity.Name</span>
+                                </a>
+                            </div>
+                            <a href="@Url.Action("SignOut", "Account")" class="nav-link d-none d-md-block" data-toggle="tooltip"
+                               data-placement="left" title="Sign Out" data-trigger="hover" data-container="body">
+                                <span class="fa fa-fw fa-sign-out"><span class="sr-only">Sign Out @User.Identity.Name</span></span> Sign Out @User.Identity.Name
+                            </a>
+                        }
+                        else
+                        {
+                            <div class="d-block d-md-none">
+                                <a href="@Url.Action("SignIn", "Account")" class="nav-link">
+                                    <span class="fa fa-fw fa-user"><span class="sr-only">Sign In</span></span>
+                                    <span class="text-uppercase">Sign In</span>
+                                </a>
+                            </div>
+                            <a href="@Url.Action("SignIn", "Account")" class="nav-link d-none d-md-block" data-toggle="tooltip"
+                               data-placement="left" title="Sign In" data-trigger="hover" data-container="body">
+                                <span class="fa fa-fw fa-user"><span class="sr-only">Sign In</span></span> Sign In
+                            </a>
+                        }
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid bg-gallery-30">
+        <div class="row">
+            <div class="col-md-12 pt-4">
+                <h1>@ViewBag.PageTitle</h1>
+            </div>
+        </div>
+    </div>
+
+    @RenderBody()
+
+    <footer class="footer footer-white">
+        <div class="footer-logo">
+            <div class="clgx-logo"></div>
+        </div>
+        <div class="footer-nav">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:">About Our Company</a>
+                </li>
+                <li class="nav-divider"></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:">Contact Us</a>
+                </li>
+                <li class="nav-divider"></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:">FAQs</a>
+                </li>
+                <li class="nav-divider"></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:">Sitemap</a>
+                </li>
+                <li class="nav-divider"></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:">Terms of Use</a>
+                </li>
+                <li class="nav-divider"></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:">Policies</a>
+                </li>
+            </ul>
+            <div class="footer-date">
+                @ViewBag.ReleaseName | © 2018 CoreLogic. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/clui/dist/js/corelogic-ui.min.js"></script>
+    <script src="~/lib/datatables/datatables.min.js"></script>
+    <script src="~/js/site.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,64 @@
+@model CorrespondentPortal.WebApi.ViewModels.ConfigurationViewModel
+@{
+    Layout = "_Layout";
+}
+<div class="container-fluid bg-gallery">
+    <div class="row">
+        <div class="col-lg-8 col-md-8 py-3 text-right offset-lg-2 offset-md-2">
+            <table class="table table-bordered">
+                <tbody>
+                    @foreach (var configuration in Model.Configurations)
+                    {
+                        <tr>
+                            <td style="width:25%">@configuration.Key</td>
+                            <td><input data-key="@configuration.Key" class="form-control configuration" type="text" value="@configuration.Value" /></td>
+                        </tr>
+                    }
+                    <tr>
+                        <td colspan="2" class="text-right">
+                            <span class="text-info small">
+                                *LogLevels (Information|Debug|Trace|Warning|Error|Critical)
+                            </span>
+                            <br />
+                            <span class="text-info small">
+                                *Changes to configurations can take up to 5 minutes to update on server
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="text-center">
+                            <span class="btn btn-primary" id="submit" value="Submit">Update</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+
+@section scripts{
+    <script>
+        $(function() {
+            $('#submit').click(function() {
+                var configurationElements = $('.configuration');
+                var configurations = new Array();
+                $.each(configurationElements,
+                    function(i, e) {
+                        configurations.push({ Key: $(e).data('key'), Value: $(e).val() });
+                    });
+
+                $(this).addClass('disabled');
+                var that = this;
+                $.post(
+                    "@Url.Action("UpdateConfigurations", "Configuration")",
+                    {configurations},
+                    function(data) {
+                        $(that).removeClass('disabled');
+                    });
+            });
+        });
+    </script>
+}
+

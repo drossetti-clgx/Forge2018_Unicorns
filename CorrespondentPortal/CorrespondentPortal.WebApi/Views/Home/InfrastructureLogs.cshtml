@@ -1,0 +1,135 @@
+@{
+    Layout = "_Layout";
+}
+<div class="container-fluid bg-gallery">
+
+    <div class="row">
+        <div class="col-lg-12 col-md-12 py-3">
+            <span class="pull-right text-muted font-italic" id="timeZoneMessage"></span>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="showInformation">
+                <label class="form-check-label" for="showInformation">Information</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="showDebug">
+                <label class="form-check-label" for="showDebug">Debug</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="showWarning" checked="checked">
+                <label class="form-check-label" for="showCritical">Warning</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="showCritical" checked="checked">
+                <label class="form-check-label" for="showCritical">Critical</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="showError" checked="checked">
+                <label class="form-check-label" for="showError">Error</label>
+            </div>
+            <br />
+            <br />
+            <div>
+                <table id="logtable" class="table table-responsive table-bordered col-1-align-center col-5-bloat">
+                    <thead>
+                        <tr>
+                            <th scope="col">Created Date</th>
+                            <th scope="col">Machine</th>
+                            <th scope="col">Severity</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Content</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <br />
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        $(function () {
+            var table = $('#logtable').DataTable({
+                "order": [[0, "desc"]],
+                "serverSide": "true",
+                "ajax": {
+                    "url": "@Url.Action("SearchInfrastructureLogsDataTable", "Home")",
+                    "data": function (data) {
+                        var logLevels = new Array();
+                        if ($('#showInformation').is(':checked')) {
+                            logLevels.push("Information");
+                        }
+                        if ($('#showCritical').is(':checked')) {
+                            logLevels.push("Critical");
+                        }
+                        if ($('#showDebug').is(':checked')) {
+                            logLevels.push("Debug");
+                        }
+                        if ($('#showError').is(':checked')) {
+                            logLevels.push("Error");
+                        }
+                        if ($('#showWarning').is(':checked')) {
+                            logLevels.push("Warning");
+                        }
+                        data.logLevels = logLevels.join("|");
+                    }
+                },
+
+                columns: [
+                    { name: 'createdDate' },
+                    { name: 'machineName' },
+                    { name: 'severity' },
+                    { name: 'source' },
+                    { name: 'content' }
+                ],
+
+                columnDefs: [
+                    {
+                        targets: [0],
+                        createdCell: function(cell, cellData, rowData, rowIndex, colIndex) {
+                            $(cell).html(ConvertUTCDateToLocalDate(cellData));
+                        }
+                    },
+                    {
+                        targets: [2],
+                        className: "text-center",
+                        render: function(data) {
+
+                            switch (data) {
+                            case "Error":
+                            case "Critical":
+                                return '<span class="badge badge-danger">' + data + '</span>';
+                            case "Warning":
+                                return '<span class="badge badge-warning">' + data + '</span>';
+                            default:
+                                    return '<span class="badge badge-default">' + data + '</span>';
+                            }
+                        }
+                    },
+                    {
+                        targets: [3],
+                        render: function (data) {
+
+                            return '<div class="logCategory">' + data.replace(/\./g, '<span>.</span>') + '</div>';
+                        }
+                    },
+                    {
+                        targets: [4],
+                        render: function(data) {
+
+                            return '<div class="logMessage">' + data + '</div>';
+                        }
+                    }
+                ]
+            });
+
+            var timezone = new Date().toString().split('(')[1].split(')')[0];
+            $('#timeZoneMessage').text("*all times in " + timezone);
+
+            $('input[type="checkbox"').on('change',
+                function() {
+                    table.draw();
+                });
+        });
+    </script>
+}

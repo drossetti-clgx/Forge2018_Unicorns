@@ -1,0 +1,101 @@
+@{
+    Layout = "_Layout";
+
+    var maxVitals = Model.HealthCheckResponseDto.HealthChecks.Aggregate((a, b) => (a.Vitals.Count > b.Vitals.Count) ? a : b).Vitals.Count;
+}
+@using CorrespondentPortal.WebApi.Infrastructure.HealthCheck
+@using CorrespondentPortal.WebApi.Infrastructure.Shared
+@model CorrespondentPortal.WebApi.ViewModels.HomeIndexViewModel
+
+<div class="container-fluid bg-gallery-30">
+    <div class="row">
+        <div class="col-md-12 py-3">
+            <div aria-label="card" class="card ">
+                <div class="card-header">
+                    <div class="heading">Links</div>
+                </div>
+                <div class="card-body text-center">
+                    [<a href="@Model.BaseUrl/swagger" class="text-primary">API Documentation</a>
+                    | <a href="@Url.Action("InfrastructureLogs", "Home")" class="text-primary">Infrastructure Logs</a>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <span>|</span> <a href="@Url.Action("Configurations", "Home")" class="text-primary">Configurations</a>
+                        <span>|</span> <a href="@Model.BaseUrl/hangfire" class="text-primary">Hangfire Dashboard</a>
+                    }]
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 py-3">
+            <div aria-label="card" class="card">
+                <div class="card-header text-@GetClassFromStatus(Model.HealthCheckResponseDto.Status)">
+                    <div class="heading">Health</div>
+                    <span data-toggle="tooltip" data-placement="bottom" data-trigger="hover" data-original-title="@(Model.HealthCheckResponseDto.Message)" class="@GetGlyphClassFromStatus(Model.HealthCheckResponseDto.Status)"></span>
+                </div>
+                <div class="card-body p-2">
+                    <div class="container-fluid">
+                        <div class="row">
+
+                            @foreach (var healthCheck in Model.HealthCheckResponseDto.HealthChecks)
+                            {
+                                <div class="col-md-4 col-sm-6 py-2">
+                                    <div aria-label="card" class="card">
+                                        <div class="card-body p-2">
+                                            <h4 class="card-title text-@GetClassFromStatus(healthCheck.Status)"> <span style="">@healthCheck.Description</span></h4>
+                                            <table>
+                                                @foreach (var vital in healthCheck.Vitals)
+                                                {
+                                                    <tr>
+                                                        <td>
+                                                            <span data-toggle="tooltip" data-placement="bottom" data-trigger="hover" data-original-title="@(vital.Message)" class="@GetGlyphClassFromStatus(vital.Status) text-@GetClassFromStatus(vital.Status)"></span>
+                                                        </td>
+                                                        <td>@vital.Description</td>
+                                                    </tr>
+                                                }
+                                                @for (var i = healthCheck.Vitals.Count; i < maxVitals; i++)
+                                                {
+                                                    <tr>
+                                                        <td>&nbsp;</td>
+                                                        <td>&nbsp;</td>
+                                                    </tr>
+                                                }
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer text-muted font-italic">
+                    *Hover over Icons for more information
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 pb-3">
+            <div aria-label="card" class="card ">
+                <div class="card-header">
+                    <div class="heading">About</div>
+                </div>
+                <div class="card-body">
+                    <p>Some information about the service. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@{
+
+    string GetClassFromStatus(HealthStatus status)
+    {
+        return status == HealthStatus.Active ? "success" : status == HealthStatus.Warning ? "warning" : "danger";
+    }
+    string GetGlyphClassFromStatus(HealthStatus status)
+    {
+        return status == HealthStatus.Active ? "fa fa-fw fa-check" : "fa fa-fw fa-exclamation-circle";
+    }
+}

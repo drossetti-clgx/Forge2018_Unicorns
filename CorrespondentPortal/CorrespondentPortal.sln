@@ -1,0 +1,52 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "CorrespondentPortal.DB", "CorrespondentPortal.DB\CorrespondentPortal.DB.sqlproj", "{8EF7080D-034C-4E66-AAFF-9087978765FF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CorrespondentPortal.WebApi.Tests", "CorrespondentPortal.WebApi.Tests\CorrespondentPortal.WebApi.Tests.csproj", "{B58E848B-B301-4833-BBA8-0E83B2C345FC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CorrespondentPortal.WebApi", "CorrespondentPortal.WebApi\CorrespondentPortal.WebApi.csproj", "{0BFB1AB4-B9F2-4CBE-BE38-55BDA96EE26F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8EF7080D-034C-4E66-AAFF-9087978765FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EF7080D-034C-4E66-AAFF-9087978765FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EF7080D-034C-4E66-AAFF-9087978765FF}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{8EF7080D-034C-4E66-AAFF-9087978765FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B58E848B-B301-4833-BBA8-0E83B2C345FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B58E848B-B301-4833-BBA8-0E83B2C345FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B58E848B-B301-4833-BBA8-0E83B2C345FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B58E848B-B301-4833-BBA8-0E83B2C345FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BFB1AB4-B9F2-4CBE-BE38-55BDA96EE26F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BFB1AB4-B9F2-4CBE-BE38-55BDA96EE26F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BFB1AB4-B9F2-4CBE-BE38-55BDA96EE26F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BFB1AB4-B9F2-4CBE-BE38-55BDA96EE26F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6E84DC18-B6D2-42E5-9DB6-340F98F2B3A8}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://tfs.fncinc.com:8080/tfs/atlas
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = CorrespondentPortal.DB\\CorrespondentPortal.DB.sqlproj
+		SccProjectName1 = CorrespondentPortal.DB
+		SccLocalPath1 = CorrespondentPortal.DB
+		SccProjectUniqueName2 = CorrespondentPortal.WebApi.Tests\\CorrespondentPortal.WebApi.Tests.csproj
+		SccProjectName2 = CorrespondentPortal.WebApi.Tests
+		SccLocalPath2 = CorrespondentPortal.WebApi.Tests
+		SccProjectUniqueName3 = CorrespondentPortal.WebApi\\CorrespondentPortal.WebApi.csproj
+		SccProjectName3 = CorrespondentPortal.WebApi
+		SccLocalPath3 = CorrespondentPortal.WebApi
+	EndGlobalSection
+EndGlobal

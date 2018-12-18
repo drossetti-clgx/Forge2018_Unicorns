@@ -1,0 +1,9 @@
+CREATE TABLE [dbo].[InfrastructureLogs]
+(
+	[Id] INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+	[MachineName] NVARCHAR(MAX) NOT NULL,
+	[CreatedDate] DATETIME2 NOT NULL,
+	[LogLevel] INT NOT NULL,
+	[Category] NVARCHAR(MAX) NOT NULL,	
+	[Content] NVARCHAR(MAX) NOT NULL
+)

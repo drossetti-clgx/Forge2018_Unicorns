@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseName>CorrespondentPortal</TargetDatabaseName>
+    <DeployScriptFileName>CorrespondentPortal.DB.sql</DeployScriptFileName>
+    <ProfileVersionNumber>1</ProfileVersionNumber>
+    <TargetConnectionString>Data Source=__connectionString__;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=True</TargetConnectionString>
+    <BlockOnPossibleDataLoss>False</BlockOnPossibleDataLoss>
+  </PropertyGroup>
+  <ItemGroup>
+    <SqlCmdVariable Include="Environment">
+      <Value>__environment__</Value>
+    </SqlCmdVariable>
+  </ItemGroup>
+</Project>

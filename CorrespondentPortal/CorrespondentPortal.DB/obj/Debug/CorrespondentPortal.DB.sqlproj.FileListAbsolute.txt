@@ -1,0 +1,8 @@
+C:\Projects\CorrespondentPortal\CorrespondentPortal.DB\bin\Debug\CorrespondentPortal.DB.dacpac
+C:\Projects\CorrespondentPortal\CorrespondentPortal.DB\bin\Debug\local.publish.xml
+C:\Projects\CorrespondentPortal\CorrespondentPortal.DB\bin\Debug\release.publish.xml
+C:\Projects\CorrespondentPortal\CorrespondentPortal.DB\bin\Debug\ServiceBoilerPlate.DB.dll
+C:\Projects\CorrespondentPortal\CorrespondentPortal.DB\bin\Debug\ServiceBoilerPlate.DB.pdb
+C:\Projects\CorrespondentPortal\CorrespondentPortal.DB\obj\Debug\CorrespondentPortal.DB.sqlprojAssemblyReference.cache
+C:\Projects\CorrespondentPortal\CorrespondentPortal.DB\obj\Debug\ServiceBoilerPlate.DB.dll
+C:\Projects\CorrespondentPortal\CorrespondentPortal.DB\obj\Debug\ServiceBoilerPlate.DB.pdb

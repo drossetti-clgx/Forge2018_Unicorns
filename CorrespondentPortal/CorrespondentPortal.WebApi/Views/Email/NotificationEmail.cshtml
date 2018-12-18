@@ -1,0 +1,59 @@
+@using CorrespondentPortal.WebApi.Infrastructure.Configuration
+@using CorrespondentPortal.WebApi.Infrastructure.HealthCheck
+@using CorrespondentPortal.WebApi.Infrastructure.Shared
+@model CorrespondentPortal.WebApi.DTO.HeathCheck.GetHealthCheckResponseDto
+
+@{
+    var siteUrl = ViewBag.SiteURL;
+    var environment = ViewBag.Environment;
+}
+
+<!doctype html>
+<html>
+<head>
+    <title>CorrespondentPortal Notification</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f6f6f6;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align: center; margin-bottom: 5px">CorrespondentPortal Health Status Notification</h2>
+    <h2 style="text-align: center; margin-top: 0px; margin-bottom: 0px">@environment</h2>
+    <h3 style="text-align: center; margin-bottom: 5px; margin-top: 0">System Health:<span style="color: @(Model.Status == HealthStatus.Active ? "#428542" : Model.Status == HealthStatus.Warning ? "#ffd760" : "#b33d4b");"> @Model.Status</span></h3>
+    <div style="text-align: center; font-size: 18px">@Model.Message</div>
+
+    @foreach (var healthCheck in Model.HealthChecks)
+    {
+        <hr />
+        <div style="font-size: 18px; font-weight: bold">@healthCheck.Description <span style="color: @(healthCheck.Status == HealthStatus.Active ? "#428542" : healthCheck.Status == HealthStatus.Warning ? "#ffd760" : "#b33d4b");">@healthCheck.Status</span></div>
+
+        foreach (var vital in healthCheck.Vitals)
+        {
+            <div style="font-weight: bold; margin-left: 15px">@vital.Description</div>
+            <div style="margin-left: 35px; word-break: break-all">@vital.Message</div>
+        }
+
+    }
+    <hr />
+    <br />
+    <!--Button with link to Home Page-->
+    <table border="0" cellpadding="0" cellspacing="0" class="btn btn-primary" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; box-sizing: border-box;">
+        <tbody>
+            <tr>
+                <td align="center" style="font-family: sans-serif; font-size: 14px; vertical-align: top; padding-bottom: 15px;">
+                    <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: auto;">
+                        <tbody>
+                            <tr>
+                                <td style="font-family: sans-serif; font-size: 14px; vertical-align: top; background-color: #d23e43; text-align: center;"> <a href="@siteUrl" target="_blank" style="display: inline-block; color: #ffffff; background-color: #d23e43; border: solid 1px #d23e43; box-sizing: border-box; cursor: pointer; text-decoration: none; font-size: 14px; font-weight: bold; margin: 0; padding: 12px 25px; text-transform: capitalize; border-color: #d23e43;">CorrespondentPortal Home Page</a> </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

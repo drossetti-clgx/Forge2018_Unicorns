@@ -1,0 +1,61 @@
+@{
+    Layout = "_Layout";
+}
+
+<div class="container-fluid bg-gallery-30">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 py-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input class="form-control" placeholder="" id="username">
+                        <label for="password">Password</label>
+                        <input class="form-control" placeholder="" type="password" id="password">
+                        <br/>
+                        <div class="text-center">
+                            <div id="unableToSignInAlert" style="display: none" class="alert alert-danger" role="alert">
+                                Unable to Sign In
+                            </div>
+                            <div id="spinnerDiv" style="position: relative; height: 100px; display: none">
+                                <div id="spinner"></div>
+                            </div>
+                            <button id="signInBtn" class="btn btn-primary">Sign In</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts{
+    <script>
+        $(function() {
+            window.CLUI.spinnerInit(document.getElementById('spinner'));
+        });
+
+        $('#signInBtn').click(
+            function() {
+                var username = jQuery('#username').val();
+                var password = jQuery('#password').val();
+                var returnUrl = getParameterByName("ReturnUrl");
+                $('#signInBtn').hide();
+                $('#spinnerDiv').show();
+                $('#unableToSignInAlert').hide();
+
+                $.ajax("@Url.Action("SignIn", "Account")",
+                    {
+                        method: "POST",
+                        data: { username: username, password: password, returnUrl: returnUrl }
+                    }).done(function (data) {
+                    window.location.href = data;
+                }).fail(function () {
+                    jQuery('#unableToSignInAlert').show();
+                    $('#signInBtn').show();
+                    $('#spinnerDiv').hide();
+                });
+            });
+    </script>
+}
