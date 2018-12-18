@@ -28,3 +28,5 @@ C:\Users\athigpen\Source\Repos\Forge2018_Unicorns\CorrespondentPortal\Correspond
 C:\Users\athigpen\Source\Repos\Forge2018_Unicorns\CorrespondentPortal\CorrespondentPortal.WebApi\obj\Debug\netcoreapp2.1\CorrespondentPortal.WebApi.RazorTargetAssemblyInfo.cs
 C:\Users\athigpen\Source\Repos\Forge2018_Unicorns\CorrespondentPortal\CorrespondentPortal.WebApi\obj\Debug\netcoreapp2.1\CorrespondentPortal.WebApi.Views.pdb
 C:\Users\athigpen\Source\Repos\Forge2018_Unicorns\CorrespondentPortal\CorrespondentPortal.WebApi\obj\Debug\netcoreapp2.1\CorrespondentPortal.WebApi.csproj.CopyComplete
+C:\Users\athigpen\Source\Repos\Forge2018_Unicorns\CorrespondentPortal\CorrespondentPortal.WebApi\obj\Debug\netcoreapp2.1\Razor\Views\Home\Dashboard.g.cshtml.cs
+C:\Users\athigpen\Source\Repos\Forge2018_Unicorns\CorrespondentPortal\CorrespondentPortal.WebApi\obj\Debug\netcoreapp2.1\Razor\Views\LoanSubmission\Index.g.cshtml.cs

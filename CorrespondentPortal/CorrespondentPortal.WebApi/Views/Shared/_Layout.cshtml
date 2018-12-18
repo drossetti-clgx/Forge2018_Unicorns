@@ -11,7 +11,7 @@
     <title>CorrespondentPortal</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-md cl-main-nav navbar-light">
+    <nav class="navbar navbar-expand-md navbar-dark cl-main-nav">
         <a class="navbar-brand" href="~/">
             <span class="navbar-logo"></span>
             <span class="text-uppercase">Correspondent Portal</span>
@@ -25,7 +25,46 @@
             </nav>
         </div>
         <div class="navbar-collapse collapse" id="navbarSupportedContent">
-            <div class="navbar-links ml-auto">
+            <div class="navbar-search d-md-none">
+                <div class="form-group">
+                    <label class="sr-only" for="mainNavbarSearchMobile">Search</label>
+                    <div class="input-group">
+                        <input class="form-control" id="mainNavbarSearchMobile"
+                               placeholder="Search" type="text" value=""
+                               autocomplete="off" aria-autocomplete="list">
+                    </div>
+                    <div class="input-group-btn">
+                        <button class="btn btn-primary">Search</button>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar-links">
+                <nav class="navbar-nav">
+                    <a class="nav-item nav-link active" href="../LoanSubmission">
+                        Loan Submission <span class="sr-only">(current)</span>
+                    </a>
+                    <div class="nav-divider"></div>
+                    <a class="nav-item nav-link active" href="../LoanManagement">
+                        Loan Management <span class="sr-only"></span>
+                    </a>
+                    <div class="nav-divider"></div>
+                    <a class="nav-item nav-link active" href="../Account">
+                        Account <span class="sr-only"></span>
+                    </a>
+                </nav>
+            </div>
+            <div class="navbar-links ml-auto d-sm-none d-md-flex">
+                <nav class="nav">
+                    <a aria-controls="navbarSearchContainer" aria-expanded="false" aria-label="Toggle Search"
+                       class="nav-item nav-link navbar-search-toggle collapse" data-toggle="collapse"
+                       href="#navbarSearchContainer">
+                        <span aria-hidden="true" class="fa fa-search">
+                            <span class="sr-only">Toggle Search</span>
+                        </span>
+                    </a>
+                </nav>
+            </div>
+            @*<div class="navbar-links ml-auto">
                 <nav class="nav">
                     <div class="nav-item">
                         @if (User.Identity.IsAuthenticated)
@@ -56,17 +95,30 @@
                         }
                     </div>
                 </nav>
+            </div>*@
+        </div>
+        <div class="navbar-search-container collapse" id="navbarSearchContainer" style="">
+            <div class="navbar-search">
+                <div class="form-group">
+                    <label class="sr-only" for="mainNavbarSearch">Search</label>
+                    <div class="input-group">
+                        <input class="form-control" id="mainNavbarSearch" placeholder="Search" type="text" value="">
+                    </div>
+                    <a class="clear-search" href="javascript:">
+                        ×
+                        <span class="sr-only">Clear Search Field</span>
+                    </a>
+                </div>
+                <div class="input-group-btn">
+                    <button class="btn btn-primary">Search</button>
+                </div>
+                <button aria-label="Close" class="navbar-close" data-toggle="collapse" href="#navbarSearchContainer"
+                        type="button" aria-expanded="true">
+                    <span aria-hidden="true" class="clear-search">×</span>
+                </button>
             </div>
         </div>
     </nav>
-
-    <div class="container-fluid bg-gallery-30">
-        <div class="row">
-            <div class="col-md-12 pt-4">
-                <h1>@ViewBag.PageTitle</h1>
-            </div>
-        </div>
-    </div>
 
     @RenderBody()
 

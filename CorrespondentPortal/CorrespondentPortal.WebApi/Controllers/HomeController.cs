@@ -37,7 +37,7 @@ namespace CorrespondentPortal.WebApi.Controllers
             ViewBag.PageTitle = "Home";
             ViewBag.ReleaseName = _releaseName;
 
-            return View("Index", new HomeIndexViewModel()
+            return View("Dashboard", new HomeIndexViewModel()
             {
                 BaseUrl = baseUrl,
                 HealthCheckResponseDto = (await _healthCheckUtility.GetHealthCheckResultAsync()).ToDto()

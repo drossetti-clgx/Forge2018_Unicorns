@@ -1,0 +1,36 @@
+@{
+    Layout = "_Layout";
+
+    var maxVitals = Model.HealthCheckResponseDto.HealthChecks.Aggregate((a, b) => (a.Vitals.Count > b.Vitals.Count) ? a : b).Vitals.Count;
+}
+@using CorrespondentPortal.WebApi.Infrastructure.HealthCheck
+@using CorrespondentPortal.WebApi.Infrastructure.Shared
+@model CorrespondentPortal.WebApi.ViewModels.HomeIndexViewModel
+
+@*<div class="page-command-area">
+    <div class="command-heading">
+        <h1 class="header">Create Order</h1>
+    </div>
+    <div class="command-toolbox">
+        <button class="btn btn-default">Cancel</button>
+    </div>
+</div>*@
+<div class="p-md-5 p-sm-3 p-2">
+
+    <div class="meta-table">
+        <div class="card open">
+            <div class="card-header">
+                <a href="#cardCollapse2" class="collapse-heading" data-toggle="collapse"
+                   aria-controls="cardCollapse2" aria-expanded="true">
+                    Hey...
+                </a>
+            </div>
+            <div aria-labelledby="cardCollapse1" class="collapse show" id="cardCollapse2" role="tabpanel">
+                <div class="card-body">
+                    <a class="btn btn-primary" href="../LoanSubmission">Loan Submission</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

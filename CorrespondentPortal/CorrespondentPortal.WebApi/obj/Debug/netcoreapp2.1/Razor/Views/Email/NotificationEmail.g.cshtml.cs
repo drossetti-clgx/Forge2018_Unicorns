@@ -68,7 +68,7 @@ using CorrespondentPortal.WebApi.Infrastructure.Shared;
             WriteLiteral("\r\n<!doctype html>\r\n<html>\r\n");
             EndContext();
             BeginContext(375, 200, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0e1f77e117804df4b40ce5e0d188c8b7", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e814f5b645e347d9a05ec29e01ddd036", async() => {
                 BeginContext(381, 187, true);
                 WriteLiteral("\r\n    <title>CorrespondentPortal Notification</title>\r\n    <style>\r\n        body {\r\n            font-family: sans-serif;\r\n            background-color: #f6f6f6;\r\n        }\r\n    </style>\r\n");
                 EndContext();
@@ -88,7 +88,7 @@ using CorrespondentPortal.WebApi.Infrastructure.Shared;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(577, 2488, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2e3ff4e70b0942d7bbdb3400614bee27", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ecc0bdf9dce4d2381cbb550d1e89dad", async() => {
                 BeginContext(583, 182, true);
                 WriteLiteral("\r\n    <h2 style=\"text-align: center; margin-bottom: 5px\">CorrespondentPortal Health Status Notification</h2>\r\n    <h2 style=\"text-align: center; margin-top: 0px; margin-bottom: 0px\">");
                 EndContext();
