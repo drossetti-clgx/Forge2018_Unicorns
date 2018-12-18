@@ -1,0 +1,460 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CorrespondentPortal.WebApi</name>
+    </assembly>
+    <members>
+        <member name="M:CorrespondentPortal.WebApi.Controllers.HealthCheckController.Get">
+            <summary>
+            Get Health Check
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.FileAttribute.FileAttributeType">
+            <summary>
+            A file attribute can be represented as 1 of these enumerated types
+            </summary>
+        </member>
+        <member name="F:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.FileAttribute.FileAttributeType.Long">
+            <summary>
+            The long
+            </summary>
+        </member>
+        <member name="F:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.FileAttribute.FileAttributeType.Double">
+            <summary>
+            The double
+            </summary>
+        </member>
+        <member name="F:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.FileAttribute.FileAttributeType.DateTime">
+            <summary>
+            The date time
+            </summary>
+        </member>
+        <member name="F:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.FileAttribute.FileAttributeType.String">
+            <summary>
+            The string
+            </summary>
+        </member>
+        <member name="P:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.FileAttribute.Name">
+            <summary>
+            Gets or sets the attribute name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.FileAttribute.ValueLong">
+            <summary>
+            Gets the value as a long.
+            </summary>
+            <value>
+            The value long.
+            </value>
+        </member>
+        <member name="P:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.FileAttribute.ValueDouble">
+            <summary>
+            Gets the value as a double.
+            </summary>
+            <value>
+            The value double.
+            </value>
+        </member>
+        <member name="P:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.FileAttribute.ValueDateTime">
+            <summary>
+            Gets the value as a date time.
+            </summary>
+            <value>
+            The value date time.
+            </value>
+        </member>
+        <member name="P:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.FileAttribute.ValueString">
+            <summary>
+            Gets the value as a string.
+            </summary>
+            <value>
+            The value string.
+            </value>
+        </member>
+        <member name="P:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.FileAttribute.ValueType">
+            <summary>
+            Gets the enumerated type of the value.
+            </summary>
+            <value>
+            The type of the value.
+            </value>
+        </member>
+        <member name="M:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.FileAttribute.#ctor(System.String,System.Nullable{System.Int64},System.Nullable{System.Double},System.Nullable{System.DateTime},System.String,CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.FileAttribute.FileAttributeType)">
+            <summary>
+            This constructor is intended to be used by the Newtonsoft.Json library.  It is preferred that devs use one of the other 4 provided constructors.
+            </summary>
+            <param name="name">The name.</param>
+            <param name="valueLong">The value long.</param>
+            <param name="valueDouble">The value double.</param>
+            <param name="valueDateTime">The value date time.</param>
+            <param name="valueString">The value string.</param>
+            <param name="valueType">Type of the value.</param>
+        </member>
+        <member name="M:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.FileAttribute.#ctor(System.String,System.Int64)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.FileAttribute"/> class.
+            </summary>
+            <param name="name">The name.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.FileAttribute.#ctor(System.String,System.Double)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.FileAttribute"/> class.
+            </summary>
+            <param name="name">The name.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.FileAttribute.#ctor(System.String,System.DateTime)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.FileAttribute"/> class.
+            </summary>
+            <param name="name">The name.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.FileAttribute.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.FileAttribute"/> class.
+            </summary>
+            <param name="name">The name.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.FileAttribute.SetValue(System.Int64)">
+            <summary>
+            Sets the value.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.FileAttribute.SetValue(System.Double)">
+            <summary>
+            Sets the value.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.FileAttribute.SetValue(System.DateTime)">
+            <summary>
+            Sets the value.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.FileAttribute.SetValue(System.String)">
+            <summary>
+            Sets the value.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="T:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.FileAttributeSet">
+            <summary>
+            This class provides methods to manipulate sets of FileAttributes.  A FileAttributeSet is a generic List of FileAttribute objects that is unique based on the lower case version of the FileAttribute.Name property.  Manipulating this list with standard List methods is strongly discouraged, instead use the SetAttribute, GetAttribute, and DeleteAttribute methods.
+            </summary>
+        </member>
+        <member name="T:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.FileVaultFile.FileVaultFileMode">
+            <summary>
+            Enumerable of file modes supported in FileVault.
+            </summary>
+        </member>
+        <member name="F:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.FileVaultFile.FileVaultFileMode.ReadOnly">
+            <summary>
+            Indicates the file is read-only.  Content cannot be changed, but metadata can by the owning application.
+            </summary>
+        </member>
+        <member name="F:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.FileVaultFile.FileVaultFileMode.ReadWrite">
+            <summary>
+            Indicates the file is read-write.  Content and metadata can be changed by the owning application.
+            </summary>
+        </member>
+        <member name="F:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.FileVaultFile.FileVaultFileMode.PrivateReadOnly">
+            <summary>
+            Indicates the file is private and read-only.  The file cannot be accessed by other applications.  Content cannot be changed, but metadata can by the owning application.
+            </summary>
+        </member>
+        <member name="F:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.FileVaultFile.FileVaultFileMode.PrivateReadWrite">
+            <summary>
+            Indicates the file is private and read-write.  The file cannot be accessed by other applications.  Content and metadata can be changed by the owning application.
+            </summary>
+        </member>
+        <member name="P:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.FileVaultFile.InfoOnly">
+            <summary>
+            Gets or sets a value indicating whether [information only].
+            </summary>
+            <value>
+              <c>true</c> if [information only]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.FileVaultFile.Guid">
+            <summary>
+            Gets or sets the unique identifier.
+            </summary>
+            <value>
+            The unique identifier.
+            </value>
+        </member>
+        <member name="P:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.FileVaultFile.PortId">
+            <summary>
+            Gets or sets the port identifier.
+            </summary>
+            <value>
+            The port identifier.
+            </value>
+        </member>
+        <member name="P:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.FileVaultFile.AppOwnerId">
+            <summary>
+            Gets or sets the application owner identifier.
+            </summary>
+            <value>
+            The application owner identifier.
+            </value>
+        </member>
+        <member name="P:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.FileVaultFile.AppOwnerName">
+            <summary>
+            Gets or sets the name of the application owner.
+            </summary>
+            <value>
+            The name of the application owner.
+            </value>
+        </member>
+        <member name="P:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.FileVaultFile.Filename">
+            <summary>
+            Gets or sets the filename.
+            </summary>
+            <value>
+            The filename.
+            </value>
+        </member>
+        <member name="P:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.FileVaultFile.Mode">
+            <summary>
+            Gets or sets the mode.
+            </summary>
+            <value>
+            The mode.
+            </value>
+        </member>
+        <member name="P:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.FileVaultFile.CreatedDate">
+            <summary>
+            Gets or sets the created date.
+            </summary>
+            <value>
+            The created date.
+            </value>
+        </member>
+        <member name="P:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.FileVaultFile.LastAccessedDate">
+            <summary>
+            Gets or sets the last accessed date.
+            </summary>
+            <value>
+            The last accessed date.
+            </value>
+        </member>
+        <member name="P:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.FileVaultFile.ExpirationDate">
+            <summary>
+            Gets or sets the expiration date.
+            </summary>
+            <value>
+            The expiration date.
+            </value>
+        </member>
+        <member name="P:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.FileVaultFile.Attributes">
+            <summary>
+            Gets or sets the attributes.
+            </summary>
+            <value>
+            The attributes.
+            </value>
+        </member>
+        <member name="P:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.FileVaultFile.FullPath">
+            <summary>
+            Gets or sets the full path.
+            </summary>
+            <value>
+            The full path.
+            </value>
+        </member>
+        <member name="P:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.FileVaultFile.FileAsByteArray">
+            <summary>
+            Gets or sets the file as byte array.
+            </summary>
+            <value>
+            The file as byte array.
+            </value>
+        </member>
+        <member name="P:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.FileVaultFile.FileSizeInBytes">
+            <summary>
+            Gets or sets the file size in bytes.
+            </summary>
+            <value>
+            The file size in bytes.
+            </value>
+        </member>
+        <member name="P:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.FileVaultFile.IsFileBankGreenFile">
+            <summary>
+            Gets or sets a value indicating whether this instance is file bank green file.
+            </summary>
+            <value>
+            <c>true</c> if this instance is file bank green file; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.FileVaultFile.ETag">
+            <summary>
+            Gets or sets the e tag.
+            </summary>
+            <value>
+            The e tag.
+            </value>
+        </member>
+        <member name="P:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.FileVaultFile.LastModifiedDate">
+            <summary>
+            Gets or sets the last modified date.
+            </summary>
+            <value>
+            The last modified date.
+            </value>
+        </member>
+        <member name="M:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.FileVaultFile.GetFileContentAsBase64String">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.UploadFileParametersDto">
+            <summary>
+            DTO containing file upload parameters.
+            </summary>
+        </member>
+        <member name="P:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.UploadFileParametersDto.PortId">
+            <summary>
+            Gets or sets the port identifier.
+            </summary>
+            <value>
+            The port identifier.
+            </value>
+        </member>
+        <member name="P:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.UploadFileParametersDto.AppOwnerId">
+            <summary>
+            Gets or sets the application owner identifier.
+            </summary>
+            <value>
+            The application owner identifier.
+            </value>
+        </member>
+        <member name="P:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.UploadFileParametersDto.AppOwnerName">
+            <summary>
+            Gets or sets the name of the application owner.
+            </summary>
+            <value>
+            The name of the application owner.
+            </value>
+        </member>
+        <member name="P:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.UploadFileParametersDto.Filename">
+            <summary>
+            Gets or sets the filename.
+            </summary>
+            <value>
+            The filename.
+            </value>
+        </member>
+        <member name="P:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.UploadFileParametersDto.Mode">
+            <summary>
+            Gets or sets the mode.
+            </summary>
+            <value>
+            The mode.
+            </value>
+        </member>
+        <member name="P:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.UploadFileParametersDto.Attributes">
+            <summary>
+            Gets or sets the attributes.
+            </summary>
+            <value>
+            The attributes.
+            </value>
+        </member>
+        <member name="P:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.UploadFileParametersDto.ExpirationInDays">
+            <summary>
+            Gets or sets the expiration in days.
+            </summary>
+            <value>
+            The expiration in days.
+            </value>
+        </member>
+        <member name="M:CorrespondentPortal.WebApi.Infrastructure.File.FileVault.DTO.UploadFileParametersDto.ValidateAndThrow">
+            <summary>
+            Validates the data contained in the DTO and throws an exception if there is a problem.
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.Exception">
+            Filename cannot be null or empty.
+            or
+            Filename is missing extension.
+            or
+            PortId cannot be longer than 50 characters.
+            or
+            AppOwnerName cannot be longer than 50 characters.
+            or
+            Filename cannot be longer than 500 characters.
+            or
+            Expiration in days cannot be less than one.
+            </exception>
+        </member>
+        <member name="M:CorrespondentPortal.WebApi.Infrastructure.Http.IHttpUtility.HttpPostContentAsync``1(System.String,System.Net.Http.HttpContent,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}},Newtonsoft.Json.JsonSerializerSettings)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="url"></param>
+            <param name="httpContent"></param>
+            <param name="headers"></param>
+            <param name="serializerSettings"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CorrespondentPortal.WebApi.Infrastructure.Http.IHttpUtility.HttpPostJsonAsync``1(System.String,System.Object,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}},Newtonsoft.Json.JsonSerializerSettings)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="url"></param>
+            <param name="requestObject"></param>
+            <param name="headers"></param>
+            <param name="serializerSettings"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CorrespondentPortal.WebApi.Infrastructure.Http.IHttpUtility.HttpGetAsync``1(System.String,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}},Newtonsoft.Json.JsonSerializerSettings)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="url"></param>
+            <param name="headers"></param>
+            <param name="serializerSettings"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CorrespondentPortal.WebApi.Infrastructure.Http.IHttpUtility.HttpGetAsync(System.String,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}})">
+            <summary>
+            
+            </summary>
+            <param name="url"></param>
+            <param name="headers"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CorrespondentPortal.WebApi.Infrastructure.Http.IHttpUtility.HttpPostJsonAsync(System.String,System.Object,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}})">
+            <summary>
+            
+            </summary>
+            <param name="url"></param>
+            <param name="requestObject"></param>
+            <param name="headers"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CorrespondentPortal.WebApi.Infrastructure.Http.IHttpUtility.HttpPostContentAsync(System.String,System.Net.Http.HttpContent,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}})">
+            <summary>
+            
+            </summary>
+            <param name="url"></param>
+            <param name="httpContent"></param>
+            <param name="headers"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

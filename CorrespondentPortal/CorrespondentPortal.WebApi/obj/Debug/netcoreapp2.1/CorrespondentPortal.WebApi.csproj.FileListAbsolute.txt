@@ -1,0 +1,12 @@
+C:\Users\athigpen\Source\Repos\Forge2018_Unicorns\CorrespondentPortal\CorrespondentPortal.WebApi\bin\Debug\netcoreapp2.1\CorrespondentPortal.WebApi.deps.json
+C:\Users\athigpen\Source\Repos\Forge2018_Unicorns\CorrespondentPortal\CorrespondentPortal.WebApi\bin\Debug\netcoreapp2.1\CorrespondentPortal.WebApi.runtimeconfig.json
+C:\Users\athigpen\Source\Repos\Forge2018_Unicorns\CorrespondentPortal\CorrespondentPortal.WebApi\bin\Debug\netcoreapp2.1\CorrespondentPortal.WebApi.runtimeconfig.dev.json
+C:\Users\athigpen\Source\Repos\Forge2018_Unicorns\CorrespondentPortal\CorrespondentPortal.WebApi\bin\Debug\netcoreapp2.1\CorrespondentPortal.WebApi.dll
+C:\Users\athigpen\Source\Repos\Forge2018_Unicorns\CorrespondentPortal\CorrespondentPortal.WebApi\bin\Debug\netcoreapp2.1\CorrespondentPortal.WebApi.pdb
+C:\Users\athigpen\Source\Repos\Forge2018_Unicorns\CorrespondentPortal\CorrespondentPortal.WebApi\bin\Debug\netcoreapp2.1\CorrespondentPortal.WebApi.xml
+C:\Users\athigpen\Source\Repos\Forge2018_Unicorns\CorrespondentPortal\CorrespondentPortal.WebApi\obj\Debug\netcoreapp2.1\CorrespondentPortal.WebApi.csprojAssemblyReference.cache
+C:\Users\athigpen\Source\Repos\Forge2018_Unicorns\CorrespondentPortal\CorrespondentPortal.WebApi\obj\Debug\netcoreapp2.1\CorrespondentPortal.WebApi.csproj.CoreCompileInputs.cache
+C:\Users\athigpen\Source\Repos\Forge2018_Unicorns\CorrespondentPortal\CorrespondentPortal.WebApi\obj\Debug\netcoreapp2.1\CorrespondentPortal.WebApi.AssemblyInfoInputs.cache
+C:\Users\athigpen\Source\Repos\Forge2018_Unicorns\CorrespondentPortal\CorrespondentPortal.WebApi\obj\Debug\netcoreapp2.1\CorrespondentPortal.WebApi.AssemblyInfo.cs
+C:\Users\athigpen\Source\Repos\Forge2018_Unicorns\CorrespondentPortal\CorrespondentPortal.WebApi\obj\Debug\netcoreapp2.1\CorrespondentPortal.WebApi.dll
+C:\Users\athigpen\Source\Repos\Forge2018_Unicorns\CorrespondentPortal\CorrespondentPortal.WebApi\obj\Debug\netcoreapp2.1\CorrespondentPortal.WebApi.pdb
