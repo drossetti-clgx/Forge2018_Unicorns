@@ -5,12 +5,12 @@
     <TargetDatabaseName>CorrespondentPortal</TargetDatabaseName>
     <DeployScriptFileName>CorrespondentPortal.DB.sql</DeployScriptFileName>
     <ProfileVersionNumber>1</ProfileVersionNumber>
-    <TargetConnectionString>Data Source=__connectionString__;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=True</TargetConnectionString>
+    <TargetConnectionString>Data Source=dev-sql02i2.fncinc.com,14360;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=True</TargetConnectionString>
     <BlockOnPossibleDataLoss>False</BlockOnPossibleDataLoss>
   </PropertyGroup>
   <ItemGroup>
     <SqlCmdVariable Include="Environment">
-      <Value>__environment__</Value>
+      <Value>DEV</Value>
     </SqlCmdVariable>
   </ItemGroup>
 </Project>

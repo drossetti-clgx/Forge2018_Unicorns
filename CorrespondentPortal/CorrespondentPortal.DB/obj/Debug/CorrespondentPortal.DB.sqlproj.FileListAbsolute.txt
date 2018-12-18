@@ -6,3 +6,11 @@ C:\Projects\CorrespondentPortal\CorrespondentPortal.DB\bin\Debug\ServiceBoilerPl
 C:\Projects\CorrespondentPortal\CorrespondentPortal.DB\obj\Debug\CorrespondentPortal.DB.sqlprojAssemblyReference.cache
 C:\Projects\CorrespondentPortal\CorrespondentPortal.DB\obj\Debug\ServiceBoilerPlate.DB.dll
 C:\Projects\CorrespondentPortal\CorrespondentPortal.DB\obj\Debug\ServiceBoilerPlate.DB.pdb
+C:\Users\athigpen\Source\Repos\Forge2018_Unicorns\CorrespondentPortal\CorrespondentPortal.DB\bin\Debug\CorrespondentPortal.DB.dacpac
+C:\Users\athigpen\Source\Repos\Forge2018_Unicorns\CorrespondentPortal\CorrespondentPortal.DB\bin\Debug\local.publish.xml
+C:\Users\athigpen\Source\Repos\Forge2018_Unicorns\CorrespondentPortal\CorrespondentPortal.DB\bin\Debug\release.publish.xml
+C:\Users\athigpen\Source\Repos\Forge2018_Unicorns\CorrespondentPortal\CorrespondentPortal.DB\bin\Debug\ServiceBoilerPlate.DB.dll
+C:\Users\athigpen\Source\Repos\Forge2018_Unicorns\CorrespondentPortal\CorrespondentPortal.DB\bin\Debug\ServiceBoilerPlate.DB.pdb
+C:\Users\athigpen\Source\Repos\Forge2018_Unicorns\CorrespondentPortal\CorrespondentPortal.DB\obj\Debug\CorrespondentPortal.DB.sqlprojAssemblyReference.cache
+C:\Users\athigpen\Source\Repos\Forge2018_Unicorns\CorrespondentPortal\CorrespondentPortal.DB\obj\Debug\ServiceBoilerPlate.DB.dll
+C:\Users\athigpen\Source\Repos\Forge2018_Unicorns\CorrespondentPortal\CorrespondentPortal.DB\obj\Debug\ServiceBoilerPlate.DB.pdb
