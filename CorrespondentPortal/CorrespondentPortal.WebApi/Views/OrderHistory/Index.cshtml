@@ -1,0 +1,152 @@
+@{
+    Layout = "_Layout";
+}
+@using CorrespondentPortal.WebApi.Infrastructure.Shared
+@*@model CorrespondentPortal.WebApi.ViewModels.HomeIndexViewModel*@
+<script src="~/lib/ViewModels/LoanSubmissionViewModel.js"></script>
+<div class="page-command-area">
+    <div class="command-heading">
+        <h1 class="header">My Orders</h1>
+    </div>
+    <div class="command-toolbox">
+
+    </div>
+</div>
+
+<div class="p-md-5 p-sm-3 p-2">
+    <div class="table-command-area">
+        <div class="command-toolbox">
+            <button aria-pressed="false" class="btn btn-primary btn-lg btn-icon-only" data-animation="false" data-toggle="tooltip"
+                    tabindex="0" title="" type="button" data-original-title="Create Order">
+                <span class="fa fa-plus"></span>
+                <span class="sr-only">Create Order</span>
+            </button>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-bordered col-2-bloat col-1-align-center table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">
+                        #
+                        <a class="sortable" href="javascript:">
+                            <span class="fa fa-fw"><span class="sr-only">Sort</span></span>
+                        </a>
+                    </th>
+                    <th scope="col">
+                        Order Date
+                        <a class="sortable" href="javascript:">
+                            <span class="fa fa-fw"><span class="sr-only">Sort</span></span>
+                        </a>
+                    </th>
+                    <th scope="col">Association</th>
+                    <th scope="col">Subject Address</th>
+                    <th scope="col">Loan #</th>
+                    <th scope="col">
+                        Borrower Name
+                        <a class="sortable" href="javascript:">
+                            <span class="fa fa-fw"><span class="sr-only">Sort</span></span>
+                        </a>
+                    </th>
+                    <th scope="col">
+                        Status
+                        <a class="sortable" href="javascript:">
+                            <span class="fa fa-fw"><span class="sr-only">Sort</span></span>
+                        </a>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr scope="row">
+                    <td>1</td>
+                    <td>10/21/2017</td>
+                    <td>Sunny Side Condos</td>
+                    <td>305 King Street Suite 205, San Francisco, CA 94122</td>
+                    <td>e8654231</td>
+                    <td>P. Mills</td>
+                    <td><span class="badge badge-default">RECEIVED</span></td>
+                </tr>
+                <tr scope="row">
+                    <td>2</td>
+                    <td>9/9/2017</td>
+                    <td>Horizon</td>
+                    <td>1125 Van Buren #110, Riverside, CA 92503</td>
+                    <td>r5586458</td>
+                    <td>C. Forge</td>
+                    <td><span class="badge badge-info">IN-PROGRESS</span></td>
+                </tr>
+                <tr scope="row">
+                    <td>3</td>
+                    <td>11/3/2017</td>
+                    <td>Bubbling Brook</td>
+                    <td>40 West Atlantic Ave #44, Costa Mesa, CA 92626</td>
+                    <td>ff449800</td>
+                    <td>M. Tyson</td>
+                    <td><span class="badge badge-success">SUCCESS</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    jQuery(document).ready(function () {
+        $.ajax('../../LoanSubmission/Init', {
+            contentType: 'application/json; charset=UTF-8',
+            cache: false,
+            type: 'GET',
+            success: function (data) {
+                var viewModel = new LoanSubmissionViewModel(data, $('#fileInput'));
+                ko.applyBindings(viewModel, $('#loanSubmissionDiv')[0]);
+                $('#loanSubmissionDiv').show();
+            }
+        });
+    });
+
+    function uploadInit() {
+        $('.upload-container').each(function () {
+            var $upload = $(this).find('.upload-components'),
+                droppedFiles = false,
+                self = $(this);
+
+            // Hook up the "Upload File" button to the hidden file input.
+            $upload.find('.btn').on('click', function () {
+                self.find('.upload-input').click();
+                self.on('change', function (e) {
+                    droppedFiles = e.target.files || e.dataTransfer.files;
+                    $(this).addClass('uploading');
+                    $(this).find('.filename').html(droppedFiles[0].name);
+                    $(this).find('.progress-bar').css('width', (Math.floor(Math.random() * 100) + 1) + '%');
+                    console.log(droppedFiles);
+                });
+            });
+
+
+            // This counter takes care of child events so they don't trigger dragleave/dragenter events and a lot of flickering.
+            var counter = 0;
+
+            $(this).on('drag dragstart dragend dragover dragenter dragleave drop', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }).on('dragover', function () {
+                $(this).addClass('dragover');
+            }).on('dragenter', function () {
+                counter++;
+                $(this).addClass('dragover');
+            }).on('dragleave', function () {
+                counter--;
+                if (counter === 0) {
+                    $(this).removeClass('dragover');
+                }
+            }).on('dragend drop', function () {
+                $(this).removeClass('dragover');
+            }).on('drop', function (e) {
+                droppedFiles = e.originalEvent.files || e.originalEvent.dataTransfer.files;
+                $(this).addClass('uploading');
+                $(this).find('.fileName').html(droppedFiles[0].name);
+                $(this).find('.progress-bar').css('width', (Math.floor(Math.random() * 100) + 1) + '%');
+                console.log(droppedFiles);
+            });
+        });
+    }
+</script>

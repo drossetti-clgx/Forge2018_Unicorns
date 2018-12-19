@@ -25,13 +25,13 @@
                 <div class="col-6">
                     <div class="form-group">
                         <label class="required" for="loanProduct">Loan Product</label>
-                        <select id="loanProduct" class="custom-select" data-bind="options: LoanProductOptions, optionsText: 'Description', optionsValue: 'Value', value: LoanProduct, optionsCaption: '--Select One--'"></select>
+                        <select id="loanProduct" class="custom-select" data-bind="options: LoanProductOptions, optionsText: 'description', optionsValue: 'value', value: LoanProduct, optionsCaption: '--Select One--'"></select>
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="form-group">
                         <label for="loanRate">Loan Rate</label>
-                        <select id="loanRate" class="custom-select" data-bind="options: LoanRateOptions, optionsText: 'Description', optionsValue: 'Value', value: LoanRate, optionsCaption: '--Select One--'"></select>
+                        <select id="loanRate" class="custom-select" data-bind="options: LoanRateOptions, optionsText: 'description', optionsValue: 'value', value: LoanRate, optionsCaption: '--Select One--'"></select>
                     </div>
                 </div>
             </div>
@@ -67,7 +67,7 @@
                 <div class="col-6">
                     <div class="form-group">
                         <label for="craLoan">CRA Loan</label>
-                        <select id="craLoan" class="custom-select" data-bind="options: CraLoanOptions, optionsText: 'Description', optionsValue: 'Value', value: CraLoan, optionsCaption: '--Select One--'"></select>
+                        <select id="craLoan" class="custom-select" data-bind="options: CraLoanOptions, optionsText: 'description', optionsValue: 'value', value: CraLoan, optionsCaption: '--Select One--'"></select>
                     </div>
                 </div>
                 <div class="col-6">
@@ -95,39 +95,14 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-12">
-                    <div class="upload-container">
-                        <label class="sr-only" for="demoUpload">This is a label</label>
-                        <input class="upload-input" id="demoUpload" multiple="multiple" type="file">
-                        <div class="upload-components">
-                            <i class="fa fa-cloud-upload"></i>
-                            <h2 class="upload-message">Drag and drop file here to upload, or click below</h2>
-                            <h2 class="drag-message">Drop File Here</h2>
-                            <button class="btn btn-default" type="button">
-                                Upload File
-                                <span class="fa fa-fw fa-upload"></span>
-                            </button>
-                            <div class="font-weight-bold mt-2">The following are acceptable file types: png, jpg, jpeg, gif, pdf</div>
-                            <div class="upload-progress">
-                                <h2 class="filename"></h2>
-                                <div class="progress">
-                                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" class="progress-bar progress-bar-bright-blue" role="progressbar" value="0">
-                                        <span class="sr-only">0% Complete</span>
-                                    </div>
-                                </div>
-                                <h5 class="uploading-message">Uploading...</h5>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    @*<div class="form-group">
+                <div class="col-6">
+                    <div class="form-group">
                         <label for="fileInput" class="required">Mismo XML</label>
                         <div class="custom-file">
-                            <input id="fileInput" type="file" class="custom-file-input" required="true" aria-required="true">
+                            <input id="fileInput" type="file" class="custom-file-input" required="true" aria-required="true" data-bind="event: { change: function() { addFile(fileEl[0].files[0])} }">
                             <div class="custom-file-control">
                                 <div class="input-group">
-                                    <div class="form-control"></div>
+                                    <div id="fileFormControl"class="form-control"></div>
                                     <div class="input-group-append">
                                         <button class="btn btn-default" type="button">Browse</button>
                                     </div>
@@ -138,22 +113,15 @@
                                 </div>
                             </div>
                         </div>
-                    </div>*@
+                    </div>
                 </div>
             </div>
-            <div class="row" style="display:none">
+            <div class="row" data-bind="visible: IsFileReady">
                 <div class="col-12">
                     <table class="table table-bordered col-2-bloat col-1-align-center">
-                        <thead>
-                            <tr>
-                                <th scope="col">Filename</th>
-                                <th scope="col">Status</th>
-                            </tr>
-                        </thead>
                         <tbody data-bind="foreach: FilesToUpload">
-                            <tr data-bind="">
-                                <td data-bind=""></td>
-                                <td data-bind=""></td>
+                            <tr>
+                                <td data-bind="text: name"></td>
                             </tr>
                         </tbody>
                     </table>
@@ -236,51 +204,53 @@
                 }
             });
         });
-
-        function uploadInit() {
-            $('.upload-container').each(function () {
-                var $upload = $(this).find('.upload-components'),
-                    droppedFiles = false,
-                    self = $(this);
-
-                // Hook up the "Upload File" button to the hidden file input.
-                $upload.find('.btn').on('click', function () {
-                    self.find('.upload-input').click();
-                    self.on('change', function (e) {
-                        droppedFiles = e.target.files || e.dataTransfer.files;
-                        $(this).addClass('uploading');
-                        $(this).find('.filename').html(droppedFiles[0].name);
-                        $(this).find('.progress-bar').css('width', (Math.floor(Math.random() * 100) + 1) + '%');
-                        console.log(droppedFiles);
-                    });
-                });
+        //var currentFile = '<span class="fa fa-file-text-o text-dark-gray"></span>&ensp;<strong>' + fileInput.files[0].name + '</strong>&ensp;' + Math.ceil(fileInput.files[0].size / 1000) + '<small>kb</small>'
 
 
-                // This counter takes care of child events so they don't trigger dragleave/dragenter events and a lot of flickering.
-                var counter = 0;
+        //function uploadInit() {
+        //    $('.upload-container').each(function () {
+        //        var $upload = $(this).find('.upload-components'),
+        //            droppedFiles = false,
+        //            self = $(this);
 
-                $(this).on('drag dragstart dragend dragover dragenter dragleave drop', function (e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                }).on('dragover', function () {
-                    $(this).addClass('dragover');
-                }).on('dragenter', function () {
-                    counter++;
-                    $(this).addClass('dragover');
-                }).on('dragleave', function () {
-                    counter--;
-                    if (counter === 0) {
-                        $(this).removeClass('dragover');
-                    }
-                }).on('dragend drop', function () {
-                    $(this).removeClass('dragover');
-                }).on('drop', function (e) {
-                    droppedFiles = e.originalEvent.files || e.originalEvent.dataTransfer.files;
-                    $(this).addClass('uploading');
-                    $(this).find('.fileName').html(droppedFiles[0].name);
-                    $(this).find('.progress-bar').css('width', (Math.floor(Math.random() * 100) + 1) + '%');
-                    console.log(droppedFiles);
-                });
-            });
-        }
+        //        // Hook up the "Upload File" button to the hidden file input.
+        //        $upload.find('.btn').on('click', function () {
+        //            self.find('.upload-input').click();
+        //            self.on('change', function (e) {
+        //                droppedFiles = e.target.files || e.dataTransfer.files;
+        //                $(this).addClass('uploading');
+        //                $(this).find('.filename').html(droppedFiles[0].name);
+        //                $(this).find('.progress-bar').css('width', (Math.floor(Math.random() * 100) + 1) + '%');
+        //                console.log(droppedFiles);
+        //            });
+        //        });
+
+
+        //        // This counter takes care of child events so they don't trigger dragleave/dragenter events and a lot of flickering.
+        //        var counter = 0;
+
+        //        $(this).on('drag dragstart dragend dragover dragenter dragleave drop', function (e) {
+        //            e.preventDefault();
+        //            e.stopPropagation();
+        //        }).on('dragover', function () {
+        //            $(this).addClass('dragover');
+        //        }).on('dragenter', function () {
+        //            counter++;
+        //            $(this).addClass('dragover');
+        //        }).on('dragleave', function () {
+        //            counter--;
+        //            if (counter === 0) {
+        //                $(this).removeClass('dragover');
+        //            }
+        //        }).on('dragend drop', function () {
+        //            $(this).removeClass('dragover');
+        //        }).on('drop', function (e) {
+        //            droppedFiles = e.originalEvent.files || e.originalEvent.dataTransfer.files;
+        //            $(this).addClass('uploading');
+        //            $(this).find('.fileName').html(droppedFiles[0].name);
+        //            $(this).find('.progress-bar').css('width', (Math.floor(Math.random() * 100) + 1) + '%');
+        //            console.log(droppedFiles);
+        //        });
+        //    });
+        //}
     </script>

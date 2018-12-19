@@ -14,25 +14,40 @@
         LoanAmount: null,
         FilesToUpload: null
     };
-    self.LoanProductOptions = ko.observableArray(obj.LoanProductOptions);
+    self.formData = new FormData();
+    self.PropertyStreetName = ko.observable('');
+    self.PropertyCity = ko.observable('');
+    self.PropertyState = ko.observable('');
+    self.PropertyZip = ko.observable('');
+    self.LoanProductOptions = ko.observableArray(obj.loanProductOptions);
     self.LoanProduct = ko.observable('');
-    self.LoanRateOptions = ko.observableArray(obj.LoanRateOptions);
+    self.LoanRateOptions = ko.observableArray(obj.loanRateOptions);
     self.LoanRate = ko.observable('');
     self.BorrowerCreditScore = ko.observable('');
     self.CuScore = ko.observable('');
     self.LcaScore = ko.observable('');
     self.Dti = ko.observable('');
     self.Ltv = ko.observable('');
-    self.CraLoanOptions = ko.observableArray(obj.CraLoanOptions);
+    self.CraLoanOptions = ko.observableArray(obj.craLoanOptions);
     self.CraLoan = ko.observableArray('');
     self.InterestRate = ko.observable('');
     self.LoanAmount = ko.observable('');
     self.FilesToUpload = ko.observableArray();
+    self.fileEl = fileEl;
+    self.IsFileReady = ko.observable(false);
 
     self.addFile = function () {
         // change this to allow multiple files
         self.formData.append("", self.fileEl[0].files[0]);
-        self.CoverLetterFileName(self.fileEl[0].files[0].name);
+        //self.CoverLetterFileName(self.fileEl[0].files[0].name);
+        var currentFile = '<span class="fa fa-file-text-o text-dark-gray"></span>&ensp;<strong>' + self.fileEl[0].files[0].name + '</strong>&ensp;' + Math.ceil(fileInput.files[0].size / 1000) + '<small>kb</small>'
+        var fileName = self.fileEl[0].files[0].name;
+        jQuery('#fileFormControl').append(currentFile);
+        //var fileNameContents = fileName.split('.');
+        //self.FilesToUpload.push({ name: fileName });
+        //self.IsFileReady(true);
+        //console.log(self.FilesToUpload());
+        //debugger;
     };
 
 
