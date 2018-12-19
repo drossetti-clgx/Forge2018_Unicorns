@@ -16,4 +16,10 @@
     <ProjectReference Include="..\Forge2018Connectivity\Forge2018Connectivity.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="MismoXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

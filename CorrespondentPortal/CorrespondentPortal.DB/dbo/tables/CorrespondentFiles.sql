@@ -1,0 +1,28 @@
+﻿CREATE TABLE [dbo].[CorrespondentFiles]
+(
+	[FileGuid] UNIQUEIDENTIFIER NOT NULL PRIMARY KEY, 
+    [UserID] INT NOT NULL, 
+    [FileName] VARCHAR(50) NOT NULL, 
+	[Status] INT NOT NULL,
+    [PropertyStreetName] VARCHAR(50) NULL, 
+    [PropertyCity] VARCHAR(50) NULL, 
+    [PropertyState] VARCHAR(50) NULL, 
+    [PropertyZip] VARCHAR(50) NULL, 
+    [DocFileID] VARCHAR(50) NULL, 
+    [CreditScore] INT NULL, 
+    [CUScore] INT NULL, 
+    [LCAScore] INT NULL, 
+    [LoanProduct] VARCHAR(5) NULL, 
+    [LoanType] VARCHAR(50) NULL, 
+    [DebtToIncome] DECIMAL NULL, 
+    [InterestRate] DECIMAL NULL, 
+    [CRAScore] BIT NULL, 
+    [LoanAmount] MONEY NULL, 
+    [LTV] DECIMAL NULL, 
+    [EstimatedValue] MONEY NULL, 
+    [FormType] VARCHAR(50) NULL, 
+    [GAARScore] INT NULL, 
+	[BorrowerName] VARCHAR(MAX) NULL, 
+    [CreatedDt] DATETIME NOT NULL, 
+    [LastChangedDt] DATETIME NOT NULL   
+)

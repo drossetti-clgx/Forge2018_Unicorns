@@ -77,6 +77,11 @@
     <Build Include="dbo\tables\Configurations.sql" />
     <Build Include="dbo\tables\InfrastructureLogs.sql" />
     <Build Include="dbo\tables\Clients.sql" />
+    <Build Include="dbo\tables\CorrespondentFiles.sql" />
+    <Build Include="dbo\tables\Users.sql" />
+    <Build Include="dbo\tables\UsersClients.sql" />
+    <Build Include="dbo\tables\UsersClientsFiles.sql" />
+    <Build Include="dbo\tables\OrderStatuses.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="scripts\Script.PostDeployment.sql" />
@@ -86,5 +91,8 @@
       <DefaultValue>LOCAL</DefaultValue>
       <Value>$(SqlCmdVar__1)</Value>
     </SqlCmdVariable>
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="CorrespondentPortal.DB.refactorlog" />
   </ItemGroup>
 </Project>

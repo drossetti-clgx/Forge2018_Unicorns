@@ -32,3 +32,4 @@ C:\Users\drossetti\source\repos\Forge2018_Unicorns\Forge2018Connectivity\UnitTes
 C:\Users\drossetti\source\repos\Forge2018_Unicorns\Forge2018Connectivity\UnitTestProject\obj\Debug\netcoreapp2.1\UnitTestProject.csproj.CopyComplete
 C:\Users\drossetti\source\repos\Forge2018_Unicorns\Forge2018Connectivity\UnitTestProject\obj\Debug\netcoreapp2.1\UnitTestProject.dll
 C:\Users\drossetti\source\repos\Forge2018_Unicorns\Forge2018Connectivity\UnitTestProject\obj\Debug\netcoreapp2.1\UnitTestProject.pdb
+C:\Users\drossetti\source\repos\Forge2018_Unicorns\Forge2018Connectivity\UnitTestProject\bin\Debug\netcoreapp2.1\MismoXML.xml

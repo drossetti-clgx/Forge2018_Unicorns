@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Text;
 
 namespace Forge2018Connectivity.GAARRequestFunctionality
 {
@@ -25,7 +23,9 @@ namespace Forge2018Connectivity.GAARRequestFunctionality
 
         private void MergeXMLStrings()
         {
-            FinalGeneratedRequestString.Append(HelperMethods.SerializeXml(FNCRequestXML));
+            FinalGeneratedRequestString.Append(HelperMethods.SerializeXml(FNCRequestXML))
+                .Replace("<?xml version=\"1.0\" encoding=\"utf-16\"?>", string.Empty)
+                .Replace("xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"", string.Empty);
             var startingIndex = FinalGeneratedRequestString.ToString().IndexOf("<FILTERS");
             FinalGeneratedRequestString.Insert(startingIndex, UserMISMOString);
         }
@@ -58,7 +58,7 @@ namespace Forge2018Connectivity.GAARRequestFunctionality
             return new FncDataAnalyticsClientRequestAuthentication
             {
                 UserID = "DSTSVCS",
-                Password = "83EdUi2"
+                Password = "83EdUi2!"
             };
         }
 
