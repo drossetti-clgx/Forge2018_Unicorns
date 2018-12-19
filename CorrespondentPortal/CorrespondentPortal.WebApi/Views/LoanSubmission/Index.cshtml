@@ -3,57 +3,169 @@
 }
 @using CorrespondentPortal.WebApi.Infrastructure.Shared
 @*@model CorrespondentPortal.WebApi.ViewModels.HomeIndexViewModel*@
-
+<script src="~/lib/ViewModels/LoanSubmissionViewModel.js"></script>
 <div class="page-command-area">
     <div class="command-heading">
         <h1 class="header">Loan Submission</h1>
     </div>
-    <div class="command-toolbox">
-        <button class="btn btn-default">Cancel</button>
-    </div>
+    @*<div class="command-toolbox">
+            <button class="btn btn-default">Cancel</button>
+        </div>*@
 </div>
-<div id="loanSubmissionDiv" class="p-md-5 p-sm-3 p-2" style="display:none">
-    <div class="meta-table">
-        <div class="card card-knockout">
-            <div class="card-header">
-                <a aria-controls="cardCollapse1" aria-expanded="true" class="collapse-heading collapsed"
-                   data-toggle="collapse" href="#cardCollapse1">
-                    Loan Attributes
-                </a>
+<div class="container-fluid bg-gallery-30 p-md-5 p-sm-3">
+    <div id="loanSubmissionDiv" class="" style="display:none">
+        <div class="meta-table">
+            <div class="card-title">
+                <div class="headings">
+                    <h1 class="header">Attributes</h1>
+                </div>
             </div>
-            <div aria-labelledby="cardCollapse1" class="collapse" id="cardCollapse1" role="tabpanel">
-                <div class="card-body">
-                    <h4 class="card-title">First, give us some basic information about the loan:</h4>
-                    <div class="row">
-                        <div class="col-4">
-                            <div class="form-group">
-                                <label class="required">Loan Reference Number</label>
-                                <input aria-required="true" class="form-control" required="true"
-                                       aria-label="Loan Reference Number">
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="form-group">
-                                <label class="required">Borrower Name</label>
-                                <input aria-required="true" class="form-control" required="true"
-                                       aria-label="Borrower Name">
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="form-group">
-                                <label for="demoInputField">Anticipated Closing Date</label>
-                                <input class="form-control" id="demoInputField">
-                            </div>
+            <h4 class="card-title">First, give us some basic information about the loan</h4>
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label class="required" for="loanProduct">Loan Product</label>
+                        <select id="loanProduct" class="custom-select" data-bind="options: LoanProductOptions, optionsText: 'Description', optionsValue: 'Value', value: LoanProduct, optionsCaption: '--Select One--'"></select>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="loanRate">Loan Rate</label>
+                        <select id="loanRate" class="custom-select" data-bind="options: LoanRateOptions, optionsText: 'Description', optionsValue: 'Value', value: LoanRate, optionsCaption: '--Select One--'"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="borrowerCreditScore">Borrower Credit Score</label>
+                        <input class="form-control" id="borrowerCreditScore" data-bind="value: BorrowerCreditScore">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="demoInputField">CU Score</label>
+                        <input class="form-control" id="borrowerCreditScore" data-bind="value: BorrowerCreditScore">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="lcaScore">LCA Score</label>
+                        <input class="form-control" id="lcaScore" data-bind="value: LcaScore">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="dti">DTI</label>
+                        <input class="form-control" id="dti" data-bind="value: Dti">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="craLoan">CRA Loan</label>
+                        <select id="craLoan" class="custom-select" data-bind="options: CraLoanOptions, optionsText: 'Description', optionsValue: 'Value', value: CraLoan, optionsCaption: '--Select One--'"></select>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="interestRate">Interest Rate</label>
+                        <input class="form-control" id="interestRate" data-bind="value: InterestRate">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="interestRate">Interest Rate</label>
+                        <input class="form-control" id="interestRate" data-bind="value: InterestRate">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card-title">
+                        <div class="headings">
+                            <h1 class="header">Documents</h1>
                         </div>
                     </div>
                 </div>
-                <div class="card-footer d-flex justify-content-end">
-                    <button class="btn btn-primary">Next</button>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="upload-container">
+                        <label class="sr-only" for="demoUpload">This is a label</label>
+                        <input class="upload-input" id="demoUpload" multiple="multiple" type="file">
+                        <div class="upload-components">
+                            <i class="fa fa-cloud-upload"></i>
+                            <h2 class="upload-message">Drag and drop file here to upload, or click below</h2>
+                            <h2 class="drag-message">Drop File Here</h2>
+                            <button class="btn btn-default" type="button">
+                                Upload File
+                                <span class="fa fa-fw fa-upload"></span>
+                            </button>
+                            <div class="font-weight-bold mt-2">The following are acceptable file types: png, jpg, jpeg, gif, pdf</div>
+                            <div class="upload-progress">
+                                <h2 class="filename"></h2>
+                                <div class="progress">
+                                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" class="progress-bar progress-bar-bright-blue" role="progressbar" value="0">
+                                        <span class="sr-only">0% Complete</span>
+                                    </div>
+                                </div>
+                                <h5 class="uploading-message">Uploading...</h5>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    @*<div class="form-group">
+                        <label for="fileInput" class="required">Mismo XML</label>
+                        <div class="custom-file">
+                            <input id="fileInput" type="file" class="custom-file-input" required="true" aria-required="true">
+                            <div class="custom-file-control">
+                                <div class="input-group">
+                                    <div class="form-control"></div>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-default" type="button">Browse</button>
+                                    </div>
+                                    <button aria-pressed="false" class="btn btn-primary btn-lg btn-icon-only" data-animation="false" data-toggle="tooltip" tabindex="0" title="" type="button" data-original-title="Create Order">
+                                        <span class="fa fa-plus"></span>
+                                        <span class="sr-only">Add File</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>*@
+                </div>
+            </div>
+            <div class="row" style="display:none">
+                <div class="col-12">
+                    <table class="table table-bordered col-2-bloat col-1-align-center">
+                        <thead>
+                            <tr>
+                                <th scope="col">Filename</th>
+                                <th scope="col">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody data-bind="foreach: FilesToUpload">
+                            <tr data-bind="">
+                                <td data-bind=""></td>
+                                <td data-bind=""></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
-
-        <div class="card card-knockout">
+        <div class="pb-5 pt-3">
+            <button type="button" class="btn btn-primary btn-lg">Submit Loan Details</button>
+        </div>
+    </div>
+</div>
+    @*<div class="card card-knockout">
             <div class="card-header">
                 <a aria-controls="cardCollapse1" aria-expanded="true" class="collapse-heading collapsed"
                    data-toggle="collapse" href="#cardCollapse1">
@@ -110,22 +222,65 @@
                     <button class="btn btn-primary">Next</button>
                 </div>
             </div>
-        </div>
-    </div>
-
-</div>
-<script>
-    jQuery(document).ready(function () {
-        $.ajax('Init', {
-            contentType: 'application/json; charset=UTF-8',
-            cache: false,
-            type: 'POST',
-            success: function (data) {
-                viewModel = new LoanSubmissionViewModel(data, $('#fileInput'));
-                ko.applyBindings(viewModel, $('#loanSubmissionDiv')[0]);
-                $('#loanSubmissionDiv').show();
-                $.unblockUI();
-            }
+        </div>*@
+    <script>
+        jQuery(document).ready(function () {
+            $.ajax('../../LoanSubmission/Init', {
+                contentType: 'application/json; charset=UTF-8',
+                cache: false,
+                type: 'GET',
+                success: function (data) {
+                    var viewModel = new LoanSubmissionViewModel(data, $('#fileInput'));
+                    ko.applyBindings(viewModel, $('#loanSubmissionDiv')[0]);
+                    $('#loanSubmissionDiv').show();
+                }
+            });
         });
-    });
-</script>
+
+        function uploadInit() {
+            $('.upload-container').each(function () {
+                var $upload = $(this).find('.upload-components'),
+                    droppedFiles = false,
+                    self = $(this);
+
+                // Hook up the "Upload File" button to the hidden file input.
+                $upload.find('.btn').on('click', function () {
+                    self.find('.upload-input').click();
+                    self.on('change', function (e) {
+                        droppedFiles = e.target.files || e.dataTransfer.files;
+                        $(this).addClass('uploading');
+                        $(this).find('.filename').html(droppedFiles[0].name);
+                        $(this).find('.progress-bar').css('width', (Math.floor(Math.random() * 100) + 1) + '%');
+                        console.log(droppedFiles);
+                    });
+                });
+
+
+                // This counter takes care of child events so they don't trigger dragleave/dragenter events and a lot of flickering.
+                var counter = 0;
+
+                $(this).on('drag dragstart dragend dragover dragenter dragleave drop', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }).on('dragover', function () {
+                    $(this).addClass('dragover');
+                }).on('dragenter', function () {
+                    counter++;
+                    $(this).addClass('dragover');
+                }).on('dragleave', function () {
+                    counter--;
+                    if (counter === 0) {
+                        $(this).removeClass('dragover');
+                    }
+                }).on('dragend drop', function () {
+                    $(this).removeClass('dragover');
+                }).on('drop', function (e) {
+                    droppedFiles = e.originalEvent.files || e.originalEvent.dataTransfer.files;
+                    $(this).addClass('uploading');
+                    $(this).find('.fileName').html(droppedFiles[0].name);
+                    $(this).find('.progress-bar').css('width', (Math.floor(Math.random() * 100) + 1) + '%');
+                    console.log(droppedFiles);
+                });
+            });
+        }
+    </script>
